@@ -11,8 +11,8 @@
                 <tr>이름</tr>
             </tr>
             </thead>
-            <tbody>
-            <tr th:each="member : ${members}">
+            <tbody> <!-- Loop 을 돌면서 적용 -->
+            <tr th:each="member : ${members}"> 
                 <td th:text="${member.id}"></td>
                 <td th:text="${member.name}"></td>
             </tr>
