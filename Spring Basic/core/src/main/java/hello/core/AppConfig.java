@@ -17,20 +17,23 @@ public class AppConfig {
 
     @Bean
     public MemberService memberService() {
+        System.out.println("call AppConfig.memberService");
         return new MemberServiceImpl(memberRepository());
     }
     @Bean
     public MemoryMemberRepository memberRepository() {
+        System.out.println("call AppConfig.memberRepository");
         return new MemoryMemberRepository();
+    }
+    @Bean
+    public OrderService orderService() {
+        System.out.println("call AppConfig.orderService");
+        return new OrderServiceImpl(memberRepository(), discountPolicy());
     }
     @Bean
     public DiscountPolicy discountPolicy() {
 //        return new FixDiscountPolicy();
         return new RateDiscountPolicy();
-    }
-    @Bean
-    public OrderService orderService() {
-        return new OrderServiceImpl(memberRepository(), discountPolicy());
     }
 
     // 역할에 따른 구분이 한 눈에 보임
