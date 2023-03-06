@@ -49,7 +49,7 @@ public class ResponseHeaderServlet extends HttpServlet {
         response.addCookie(cookie);
     }
 
-    private void redirect(HttpServletResponse response) {
+    private void redirect(HttpServletResponse response) throws IOException {
         //Status Code: 302
         //Location: /basic/hello-form.html
 
